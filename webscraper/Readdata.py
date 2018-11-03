@@ -4,6 +4,7 @@ def get_Bust(size):
 	r = requests.get('https://heabuh.com/perfectfit/getchartforstore?store_name=guess')
 	searchString = "Letter"
 	bustCol = 0
+	sizeCol = 0
 	if size.isdigit():
 		searchString = "Numeric"
 
@@ -70,8 +71,8 @@ def get_Size(bust):
 					elif(row[bustCol]>bust):
 						upperNumeric = row[numericCol]
 						upperLetter = row[letterCol]
-						if(lowernumeric!=-1):
-							size = "Your size is between " + lowernumeric + "("+lowerLetter+") and"+upperNumeric+"("+upperLetter+")"
+						if(lowerNumeric!=-1):
+							size = "Your size is between " + lowerNumeric + "("+lowerLetter+") and"+upperNumeric+"("+upperLetter+")"
 							return size
 						else:
 							return "Pick the smallest size!"
