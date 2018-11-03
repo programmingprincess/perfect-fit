@@ -1,7 +1,7 @@
 import requests
 
-def get_Bust(size):
-	r = requests.get('https://heabuh.com/perfectfit/getchartforstore?store_name=guess')
+def get_Bust(urlstr, size):
+	r = requests.get(urlstr)
 	searchString = "Letter"
 	bustCol = 0
 	sizeCol = 0
@@ -30,8 +30,8 @@ def get_Bust(size):
 					if(row[sizeCol] == size):
 						return row[bustCol]
 
-def get_Size(bust):
-	r = requests.get('https://heabuh.com/perfectfit/getchartforstore?store_name=gucci')
+def get_Size(urlstr, bust):
+	r = requests.get(urlstr)
 	letterCol = 0
 	numericCol = 0
 	bustCol = 0
@@ -72,21 +72,44 @@ def get_Size(bust):
 						upperNumeric = row[numericCol]
 						upperLetter = row[letterCol]
 						if(lowerNumeric!=-1):
-							size = "Your size is between " + lowerNumeric + "("+lowerLetter+") and"+upperNumeric+"("+upperLetter+")"
+							size = "Your size is between " + lowerNumeric + "("+lowerLetter+") and "+upperNumeric+"("+upperLetter+")"
 							return size
 						else:
 							return "Pick the smallest size!"
 		return "Not Found"
-
+def cut_url(urlstr):
+	first_index = urlstr.find('http://')
+	if first_index!=-1:
+		first_index+=7
+		urlstr = urlstr[first_index:]
+	first_index = urlstr.find('https://')
+	if first_index!=-1:
+		first_index+=8
+		urlstr = urlstr[first_index:]
+	first_index = urlstr.find('www.')
+	if first_index!=-1:
+		first_index+=4
+		urlstr = urlstr[first_index:]
+	lastIndex = urlstr.rfind('.')
+	if(lastIndex!=-1):
+		urlstr = urlstr[0:lastIndex]
+	return urlstr
 
 def main():
-	
-	size = raw_input("What is your size? ")
-	bust = get_Bust(size)
-	print("Bust Size: ", bust)
-	yourBust = raw_input("What is your bust? ")
-	convertedSize = get_Size(yourBust)
-	print(convertedSize)
+	website = raw_input("Enter website ")
+	website= cut_url(website)
+	urlstr = 'https://heabuh.com/perfectfit/getchartforstore?store_name='+website
+	size = raw_input("What is your size in "+ website+ "?")
+	bust = get_Bust(urlstr,size)
+	decoded_value = bust.encode('utf-8')
+	print(type(decoded_value))
+	print(decoded_value[0:len(decoded_value)-2])
+	website = raw_input("Enter website ")
+	website = cut_url(website)
+	urlstr = 'https://heabuh.com/perfectfit/getchartforstore?store_name='+website
+	convertedSize = get_Size(urlstr,bust)
+	print("For ", website, " "convertedSize)
+
 
 
 	
