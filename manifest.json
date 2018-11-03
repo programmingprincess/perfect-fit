@@ -14,11 +14,10 @@
     "default_title": "Perfect Fit",
     "default_popup": "display_sizes.html"
   },
-  "permissions": ["activeTab"],
-    "background": {
-    "scripts": ["perfect-fit.js"]
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["CurrentWebsite.js"]
   },
-  
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

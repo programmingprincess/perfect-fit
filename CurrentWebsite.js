@@ -1,11 +1,4 @@
-function onGot(page) {
-  page.foo();
+function foo() {
+	var gettingCurrent = browser.tabs.getCurrent();
+	console.log(gettingCurrent.url);
 }
-
-function onError(error) {
-  console.log(`Error: ${error}`);
-}
-
-var getting = browser.runtime.getBackgroundPage();
-document.getElementById("tester").innerText = "Website"+getting
-getting.then(onGot, onError);
