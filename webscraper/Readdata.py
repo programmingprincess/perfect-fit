@@ -73,7 +73,7 @@ def get_Size(bust):
 						if(lowernumeric!=-1):
 							size = "Your size is between " + lowernumeric + "("+lowerLetter+") and"+upperNumeric+"("+upperLetter+")"
 							return size
-						else
+						else:
 							return "Pick the smallest size!"
 		return "Not Found"
 
