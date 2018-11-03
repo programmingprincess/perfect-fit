@@ -19,11 +19,15 @@
       "page": "options.html",
       "browser_style": true
   },          
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["CurrentWebsite.js"]
+  },
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["perfect-fit.js"]
+      "matches": ["<all_urls>"],
+      "js": ["CurrentWebsite.js"]
     }
-  ]
-                                          
+  ]              
+                                         
 }
