@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8"> 
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+	</style>
+	<script type="text/javascript" src="list_of_stores.json"></script>
+</head>
+<body>
+	<h2>Input your sizing!</h2>
+	<select name = "store" id="store-list">
+	</select> 
+	<!--<form>
+		Bust: <input type="text" name="bust" value="in"><br>
+		Waist: <input type="text" name="bust" value="in"><br>
+		Bust: <input type="text" name="bust" value="in"><br>
+		Bust: <input type="text" name="bust" value="in"><br>
+	</form>-->
+	<div id="tester"></div>
+	<div class = "size-info">
+		<h3>Your Sizes:</h3>
+		<h4>Top: <span id = "top-size">S</span></h4>
+		<h4>Bottoms: <span id = "bottom-size">27</span></h4>
+	</div>
+
+	<form>
+		Tops Size: <input type = "text" id = "topInput" placeholder="XS, S, M, L, XL"> <br>
+		Bottoms Size: <input type = "text" id = "bottomInput" placeholder = "24, 26,...,32">
+		
+		<input type = "submit" value = "Submit" onclick = "submit()">
+
+	</form>
+
+	<script src = "options.js"></script>
+</body>
+</html>

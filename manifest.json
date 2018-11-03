@@ -1,5 +1,12 @@
 {
-
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "icons/hoodie.png",
+    "default_title": "Perfect Fit",
+    "default_popup": "display_sizes.html"
+  },
   "description": "Finds the perfect fit for you on every website!",
   "manifest_version": 2,
   "name": "PerfectFit",
@@ -8,17 +15,14 @@
   "icons": {
     "48": "icons/hoodie.png"
   },
-
-  "browser_action": {
-    "default_icon": "icons/hoodie.png",
-    "default_title": "Perfect Fit",
-    "default_popup": "display_sizes.html"
+  "options_ui": {
+      "page": "options.html",
+      "browser_style": true
+  },          
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["CurrentWebsite.js"]
   },
-  "permissions": ["activeTab"],
-    "background": {
-    "scripts": ["perfect-fit.js"]
-  },
-  
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
