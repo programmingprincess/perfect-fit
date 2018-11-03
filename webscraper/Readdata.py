@@ -108,7 +108,7 @@ def main():
 	website = cut_url(website)
 	urlstr = 'https://heabuh.com/perfectfit/getchartforstore?store_name='+website
 	convertedSize = get_Size(urlstr,bust)
-	print("For ", website, " "convertedSize)
+	print(convertedSize)
 
 
 
