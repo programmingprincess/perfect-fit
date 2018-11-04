@@ -16,6 +16,8 @@ function getStorage() {
     console.log(`popup selected store: ${res.store}`);
   });
   default_store.textContent = newStore;
+
+  document.getElementById("tester").innerText = "hey testing this is working";
 }
 
 document.querySelector("form").addEventListener("submit", getStorage);

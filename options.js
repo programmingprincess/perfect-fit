@@ -32,15 +32,27 @@ function restoreOptions() {
   var options = "";
 
   for(var store in stores) {
-    options += "<option value='" + stores[store] + "'>" + stores[store] + "</option>"
+    options += '<option value="' + stores[store] + '">' + stores[store] + '</option>'
   }
 
   document.getElementById("store-list").innerHTML = options;
 
-  /*var storedStore = browser.storage.managed.get("selectedStore");
+  var savedStore = "";
+
+  var storedStore = browser.storage.local.get("store");
   storedStore.then((res)=> {
-    document.
-  })*/
+    savedStore = `${res.store}`;
+  })
+
+  var savedTopSize= "";
+  var storedTop = browser.storage.local.get("topSize");
+  storedTop.then((res)=> {
+    savedTopSize = `${res.topSize}`;
+    console.log("dom has been reloaded, update new top size now!");
+  })
+
+  document.getElementById("top-size").textContent = savedTopSize;
+
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
