@@ -1,0 +1,10 @@
+{
+  "name":  "perfect-fit-storage",
+  "description": "ignored",
+  "type": "storage",
+  "data": {
+    "store": "we think it should be abercrombie!",
+    "topSize": "XS"
+  }
+}
+

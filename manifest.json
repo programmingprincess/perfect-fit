@@ -19,7 +19,9 @@
       "page": "options.html",
       "browser_style": true
   },          
-  "permissions": ["tabs"],
+  "permissions": 
+    ["tabs",
+     "storage"],
   "background": {
     "scripts": ["CurrentWebsite.js"]
   },
@@ -28,6 +30,10 @@
       "matches": ["<all_urls>"],
       "js": ["CurrentWebsite.js"]
     }
-  ]              
-                                         
+  ],
+  "applications": {
+      "gecko": {
+          "id": "perfect-fit-storage@mozilla.org"
+      }
+  }                                                   
 }
