@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		body {
+			font-family: sans-serif;
+			width: 300px;
+		}
+		.saved h5 {
+			margin: 5px 0 0 0;
+		}
+
+		</style>
+	</head>
+<body>
+	<div id = "tester"></div>
+
+<h1> Perfect Fit </h1>
+
+<!--<h3>Shirts: </h3>-->
+<div class = "saved">
+	<h4> Your saved info: </h4> 
+	<h5><span id="saved_store"></span></h5>
+	<h5>Tops: <span id="saved_topSize"></span></h5>
+	<h5>Bottoms: <span id="saved_botSize"></span></h5>
+</div>
+<h4>Your sizes for </h4>
+<h3><span id ="current_store"></span>:</h3>
+
+<h4><span id ="topSize"></span> <span id ="botSize"></span>
+<form>
+
+<input id = "options" type ="submit" value ="Preferences" onclick="openOptions()">
+
+</form>
+<script src="perfect-fit.js"></script>
+</body>
+</html>
