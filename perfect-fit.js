@@ -1,4 +1,4 @@
-document.body.style.border = "5px solid red";
+document.body.style.border = "5px solid blue";
 
 function getPage() {
 	browser.tabs.query({currentWindow: true, active: true})
@@ -16,7 +16,7 @@ function getStorage() {
     console.log(`popup selected store: ${res.store}`);
   });
   default_store.textContent = newStore;
-
+  debugger
   document.getElementById("tester").innerText = "hey testing this is working";
 }
 

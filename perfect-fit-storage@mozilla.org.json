@@ -4,7 +4,8 @@
   "type": "storage",
   "data": {
     "store": "we think it should be abercrombie!",
-    "topSize": "XS"
+    "topSize": "XS",
+    "botSize": "24"
   }
 }
 

@@ -1,29 +1,12 @@
 function saveOptions(e) {
-
-  var topSize = document.getElementById("topInput").value;
-  document.getElementById("top-size").textContent = topSize;
-
-  var bottomSize = document.getElementById("bottomInput").value;
-  document.getElementById("bottom-size").textContent = bottomSize;
-
-  console.log(document.getElementById("store-list").value);
-
-  browser.storage.local.set({
-    store: document.querySelector("#store-list").value,
-    topSize: topSize
-  });
-
-  var storageitem = browser.storage.local.get('store');
-  storageitem.then((res) => {
-    console.log(`stored store is: ${res.store}`);
-  });
-
-  storageitem = browser.storage.local.get('topSize');
-  storageitem.then((res) => {
-    console.log(`stored topSize is: ${res.topSize}`);
-  });
-
   e.preventDefault();
+
+  browser.storage.sync.set({
+    store: document.querySelector("#store-list").value,
+    topSize: document.getElementById("topInput").value,
+    botSize: document.getElementById("bottomInput").value
+  })
+  console.log("Saved options")
 }
 
 function restoreOptions() {
@@ -36,22 +19,18 @@ function restoreOptions() {
   }
 
   document.getElementById("store-list").innerHTML = options;
+  function setCurrentChoices(result) {
+    document.getElementById("selected-store").textContent = result.store || "Abercrombie";
+    document.getElementById("top-size").textContent = result.topSize || "M";
+    document.getElementById("bottom-size").textContent = result.botSize || "29";
+  }
 
-  var savedStore = "";
+  function onError(error) {
+    console.log(`Error: ${error}`);
+  }
 
-  var storedStore = browser.storage.local.get("store");
-  storedStore.then((res)=> {
-    savedStore = `${res.store}`;
-  })
-
-  var savedTopSize= "";
-  var storedTop = browser.storage.local.get("topSize");
-  storedTop.then((res)=> {
-    savedTopSize = `${res.topSize}`;
-    console.log("dom has been reloaded, update new top size now!");
-  })
-
-  document.getElementById("top-size").textContent = savedTopSize;
+  var getting = browser.storage.sync.get(["store", "topSize", "botSize"])
+  getting.then(setCurrentChoices, onError);
 
 }
 
