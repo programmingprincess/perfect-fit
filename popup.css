@@ -1,0 +1,91 @@
+body {
+  font-family: PT Sans, sans-serif;
+  width: 300px;
+	padding: 0 5px 0;
+	margin: 10px 2px 10px 2px;
+}
+
+.half {
+	display: inline-block;
+	width: 48%;
+}
+
+.full {
+	display: block;
+	width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+input[type=submit] {
+	font-size: 0.85em;
+  padding: 5px 20px 6px 20px;
+  border: 1px solid #A6A8A6;
+  background-color: #E6E8E6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+input[type=submit]:hover {
+	background-color: #F1F2F2;
+}
+
+/* Title 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.title {
+	margin: 10px 0 2px 0;
+}
+
+/* Calculated 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.calculated {
+	/*border: 2px solid pink;*/
+	background-color: pink;
+	width: 100%;
+	padding: 20px 0 30px 0;
+}
+
+.calculated h3 {
+	margin: 0 0 10px 0;
+}
+
+.calculated p.label {
+	font-size: 1.15em;
+  margin: 5px 0 0 0;
+}
+
+.calculated p.store {
+	font-size: 1.25em;
+}
+
+#topSize:hover {
+
+}
+
+
+/* Saved 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.saved {
+	margin: 10px 0 10px 0;
+}
+
+.saved p {
+	margin: 0;
+	font-size: 1em;
+}
+
+.saved p.store {
+	margin: 0 0 10px 0;
+	font-size: 1.15em;
+}
+.saved-content {
+	margin: 10px 0 20px 0;
+}
+
+
+

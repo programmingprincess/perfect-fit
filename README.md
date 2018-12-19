@@ -25,6 +25,7 @@ Features
 - [ ] Auto-calculate bust/waist/hip sizes based on numeric/letter size (i.e., given S, calculate Bust = 32 and Waist = 24...)
 - [ ] Men's sizing 
 - [ ] Also have a website that does calculations? 
+- [ ] Tooltip when hovering over calculated sizes to explain calculations?
 
 ## Awards 
 

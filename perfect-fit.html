@@ -3,40 +3,45 @@
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
-		<style>
-		body {
-			font-family: PT Sans, sans-serif;
-			width: 300px;
-		}
-		.saved h5 {
-			font-weight: 400;
-			margin: 5px 0 0 0;
-		}
-
-
-		</style>
+		<link href="popup.css" rel="stylesheet" type="text/css">
 	</head>
 <body>
 	<div id = "tester"></div>
+<h1 class = "title"> Perfect Fit </h1>
+<div class = "container">
+	<!--<h3>Shirts: </h3>-->
+	<div class = "calculated center">
+		<div class = "full">
+			<h3> Your calculated fit: </h3> 
+			<p class = "store"><span id="current_store"></span></p>
+		</div>
+		<div class = "half">
+			<p class = "label">Tops: <br><span id="topSize"></span></p>
+		</div>
+		<div class = "half">
+			<p class = "label">Bottoms: <br><span id="botSize"></span></p>
+		</div>
 
-<h1> Perfect Fit </h1>
+	</div>
+	<div class = "saved">
+		<h3>Based on saved sizing: </h3>
+		<div class = "saved-content">
+			<p class = "store "><span id ="saved_store"></span></p>
+			<div class = "half">
+				<p class = "label">Tops: <span id ="saved_topSize"></span> </p>
+			</div>
+			<div class = "half">
+				<p class = "label">Bottoms: <span id ="saved_botSize"></span></p>
+			</div>
+		</div>
 
-<!--<h3>Shirts: </h3>-->
-<div class = "saved">
-	<h4> Your saved info: </h4> 
-	<h5><span id="saved_store"></span></h5>
-	<h5>Tops: <span id="saved_topSize"></span></h5>
-	<h5>Bottoms: <span id="saved_botSize"></span></h5>
+	</div>
+
+
+
+	<input id = "options" type ="submit" value ="Preferences" >
 </div>
-<h4>Your sizes for </h4>
-<h3><span id ="current_store"></span>:</h3>
 
-<h4><span id ="topSize"></span> <span id ="botSize"></span>
-<form>
-
-<input id = "options" type ="submit" value ="Preferences" >
-
-</form>
 <script src="perfect-fit.js"></script>
 </body>
 </html>
