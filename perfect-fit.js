@@ -1,16 +1,28 @@
-document.body.style.border = "5px solid pink";
-
-function openOptions() {
-  function onOpened() {
-    console.log(`Options page opened`);
-  }
-
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-  var opening = browser.runtime.openOptionsPage();
-  opening.then(onOpened, onError);
+function handleResponse(message) {
+  console.log(`Message from the background script:  ${message.response}`);
 }
+
+function handleError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function listeners() {
+  console.log("listener")
+  document.getElementById("options").addEventListener('click', notifyBackground);
+  var lol = document.getElementById("options")
+  console.log(lol)
+}
+
+function notifyBackground(e) {
+  console.log("notifyBackground")
+  var lol = document.getElementById("options")
+  console.log(lol)
+  var sending = browser.runtime.sendMessage({
+    greeting: "Open Options"
+  });
+  sending.then(handleResponse, handleError);  
+}
+
 function getPage() {
 	browser.tabs.query({currentWindow: true, active: true})
 		.then((tabs) => {
@@ -51,6 +63,6 @@ function getHostName(url) {
   }
 }
 
-document.getElementById("options").addEventListener("submit", openOptions);
+listeners();
 getPage();
 getStorage();

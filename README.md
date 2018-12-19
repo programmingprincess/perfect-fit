@@ -15,7 +15,7 @@ We are now using `browser.storage.sync` instead of local storage, but the storag
 Functionality 
 - [ ] Integrate front-end and back-end 
 - [ ] Settle ambiguity between "tops" vs. "shirts" vs. "sweaters" (store naming conventions)
-- [ ] Open up options page from extension popup 
+- [x] Open up options page from extension popup 
 - [ ] Display domain name or store name? (If the latter, we may need to create a dictionary to map domains to store names)
 
 
@@ -24,6 +24,7 @@ Features
 - [ ] Allow users to select bust/waist preference for tops 
 - [ ] Auto-calculate bust/waist/hip sizes based on numeric/letter size (i.e., given S, calculate Bust = 32 and Waist = 24...)
 - [ ] Men's sizing 
+- [ ] Also have a website that does calculations? 
 
 ## Awards 
 
